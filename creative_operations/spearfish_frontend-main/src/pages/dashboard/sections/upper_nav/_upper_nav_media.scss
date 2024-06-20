@@ -1,0 +1,7 @@
+@use '../../../../global/styles/include_media' as im;
+
+.upper-nav-main {
+  @include im.media('<=tablet') {
+    display: block !important;
+  }
+}

@@ -1,0 +1,26 @@
+@use '../../global/styles/global' as *;
+
+.confirm-modal-container {
+  width: 30%;
+  min-height: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+
+  .icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: darken($color: $bg-primary, $amount: 5%);
+    color: $text-secondary;
+    font-size: 30px;
+    border: 1px solid rgb(209, 209, 209);
+  }
+
+  .buttons {
+    gap: 20px;
+    button {
+      height: 40px;
+    }
+  }
+}

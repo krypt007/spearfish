@@ -1,0 +1,65 @@
+@use './verify_email_media';
+@use '../../../../global/styles/global' as g;
+
+.verify-main {
+  height: 100vh;
+
+  form {
+    position: relative;
+    width: 30%;
+    border-radius: 7px;
+    background-color: g.$text-primary;
+    padding: 50px 20px;
+    background: #F8FAFF;
+    box-shadow:  20px 20px 60px #d3d5d9,
+                -20px -20px 60px #ffffff;
+    z-index: 1;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .input-container {
+      margin: 20px 0 20px 0;
+      width: 100%;
+
+      input {
+        width: 100%;
+        height: 40px;
+        border-radius: 7px;
+        border: none;
+        @include g.subtleGradient();
+        outline: 2px solid lighten($color: g.$bg-secondary-2, $amount: 20%);
+        transition: 0.3s;
+        padding: 0 10px;
+
+        &:focus {
+          outline: 2px solid g.$bg-secondary-2;
+        }
+      }
+
+      .verify-label {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+
+    button {
+      @include g.button();
+      height: 40px;
+      border-radius: 7px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.nav-bar-top {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+
+  .landing-page-header {
+    padding: 0 50px;
+  }
+}

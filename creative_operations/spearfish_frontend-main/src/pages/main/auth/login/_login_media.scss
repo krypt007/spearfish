@@ -1,0 +1,16 @@
+@use '../../../../global/styles/include_media' as im;
+@use '../../../../global/styles/global' as g;
+
+.login-main {
+  @include im.media('<=tablet') {
+    @include g.flex($direction: column);
+
+    .form-content {
+      .form-content-container {
+        form {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

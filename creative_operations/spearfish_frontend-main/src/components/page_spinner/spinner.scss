@@ -1,0 +1,15 @@
+@import '../../global/styles/global';
+
+#page-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $bg-primary;
+  height: 100vh;
+  z-index: 5;
+
+  .spinner {
+    color: $bg-secondary-1;
+  }
+}

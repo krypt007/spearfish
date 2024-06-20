@@ -1,0 +1,11 @@
+@use '../../global/styles/include_media' as im;
+
+@include im.media('<=tablet') {
+  .table-1 {
+    display: none;
+  }
+
+  .mobile-table {
+    display: block !important;
+  }
+}

@@ -1,0 +1,9 @@
+@use '../signup/signup.scss' as *;
+@use './login_media';
+
+.signup-main {
+  .image {
+    background: url('../../../../../public/images/join.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}

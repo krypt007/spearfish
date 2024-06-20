@@ -1,0 +1,8 @@
+@use '../../global/styles/include_media' as im;
+
+.notification-main {
+  @include im.media('<=370px') {
+    width: 95% !important;
+    left: calc(50% - (95% / 2)) !important;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../global/styles/global' as g;
+
+.no-data {
+  padding: 20px;
+  border-radius: 10px;
+  @include g.subtleGradient();
+
+  .info {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    @include g.subtleGradient();
+    color: g.$dull-black-2;
+  }
+
+  .button {
+    margin-top: 15px;
+    @include g.outlineButton2();
+    border-radius: 20px;
+  }
+}

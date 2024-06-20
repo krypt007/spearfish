@@ -1,0 +1,28 @@
+@use '../../../global/styles/include_media' as im;
+
+
+.dashboard-container {
+  @include im.media('<desktop') {
+    aside.right {
+      display: none;
+    }
+
+    aside.left {
+      width: 25% !important;
+    }
+
+    .dashboard-content {
+      width: calc(75%) !important;
+    }
+  }
+
+  @include im.media('<=tablet') {
+    aside.left {
+      display: none;
+    }
+
+    .dashboard-content {
+      width: 100% !important;
+    }
+  }
+}

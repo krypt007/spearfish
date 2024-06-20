@@ -1,0 +1,22 @@
+@import '../../../../../global/styles/global';
+
+// categories
+.categories-cards {
+    .categories-cards-main {
+      position: relative;
+
+      .categories-header {
+        .action-btns {
+          @include outlineButton();
+          width: 35px;
+          height: 35px;
+          padding: 0;
+          outline: 1px solid $dull-black;
+
+          &:hover {
+            outline: 1px solid $bg-secondary-2;
+          }
+        }
+      }
+    }
+}

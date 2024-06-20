@@ -1,0 +1,107 @@
+@use './signup_media';
+@use '../../../../global/styles/global' as *;
+
+.nav-additional-styles {
+  display: none;
+}
+
+.signup-main {
+  width: 100%;
+  height: 100vh;
+
+  .image {
+    height: 100vh;
+    width: 60%;
+    background: url('../../../../../public/images/join5.jpg') no-repeat center center;
+    background-size: cover;
+    // position: fixed;
+
+    .about-details {
+      width: 60%;
+      // min-height: 70%;
+      min-width: 60%;
+      border-radius: 20px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid $text-primary;
+      padding: 20px;
+      @include subtleGradient();
+
+      .p-big {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $text-primary;
+        margin-bottom: 100px;
+      }
+    }
+  }
+
+  .form-content {
+    height: 100vh;
+    width: 40%;
+    padding: 30px 20px;
+    overflow-y: auto;
+
+    .form-content-container {
+      form {
+        width: 400px;
+        .input-container {
+          margin-bottom: 10px;
+
+          label {
+            font-size: 0.7rem;
+            color: $dull-black-2;
+            margin-bottom: 5px;
+            // font-weight: 600;
+          }
+
+          input {
+            width: 100%;
+            outline: 1px solid lighten($color: $bg-secondary-1, $amount: 25%);
+            border: none;
+            font-family: inherit;
+            // background-color: darken($color: $bg-primary, $amount: 2%);
+            @include subtleGradient2();
+            padding: 5px 10px;
+            height: 40px;
+            border-radius: 10px;
+  
+            &:focus {
+              outline: 1px solid $bg-secondary-2;
+            }
+          }
+        }
+  
+        .double-inputs {
+          .input-container {
+            width: 50%;
+          }
+        }
+  
+        input[type=checkbox] {
+          accent-color: $bg-secondary-2;
+        }
+  
+        button {
+          @include button();
+          height: 45px;
+          font-size: 1rem;
+          margin: 10px 0;
+        }
+
+        .outline-btn {
+          background: none;
+          color: $bg-secondary-2;
+          background-color: inherit;
+          border: 2px solid $bg-secondary-2;
+          transition: 0.3s;
+
+          &:hover {
+            @include subtleGradient();
+          }
+        }
+      }
+    }
+    
+  }
+}

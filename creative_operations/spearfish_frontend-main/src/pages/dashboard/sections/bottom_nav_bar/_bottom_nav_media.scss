@@ -1,0 +1,7 @@
+@use '../../../../global/styles/include_media' as im;
+
+.bottom-nav {
+  @include im.media('<=tablet') {
+    display: flex;
+  }
+}

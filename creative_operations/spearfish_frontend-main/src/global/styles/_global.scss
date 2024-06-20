@@ -1,0 +1,155 @@
+$bg-primary: #F8FAFF;
+$bg-secondary-1: #7163BA;
+$bg-secondary-2: #d73fd1d4;
+$text-primary: rgba(255, 255, 255,  0.9);
+$text-secondary: rgba(0, 0, 0, 0.9);
+$text-secondary-dull: #8d8d8d;
+$dull-black: #9b9b9b;
+$dull-black-2: #808080;
+$dull-white: #dddddd;
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@mixin gradient($deg, $heightA, $heightB, $color1: $bg-secondary-1, $color2: $bg-secondary-2) {
+  background: linear-gradient($deg, $color1 $heightA, $color2 $heightB);
+	background-size: 100% 100%;
+}
+
+@mixin gradient-90-deg {
+  @include gradient(90deg, -0.67%, 99.93%);
+}
+
+@mixin gradient-180-deg {
+	@include gradient(175.8deg, 3.2%, 96.39%);
+}
+
+@mixin gradient-0-deg {
+	@include gradient(0deg, 1%, 99%);
+}
+
+@mixin animate-gradient {
+	background-size: 200% 200%;
+  animation: gradient 2s ease infinite;
+}
+
+@mixin subtleGradient {
+	@include gradient(90deg, 0%, 103.48%, rgba($bg-secondary-1, 0.25), rgba($bg-secondary-2, 0.19));
+}
+
+@mixin subtleGradient2 {
+	@include gradient(90deg, 0%, 100%, rgba($bg-secondary-1, 0.10), rgba($bg-secondary-2, 0.15));
+}
+
+
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify-content;
+	align-items: $align-items;
+}
+
+
+@mixin gradient-font() {
+  // CSS
+  color: #4a21a3;
+  background-image: -webkit-linear-gradient(0deg, #4a21a3 5%, #ad2fa9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+
+}
+
+@mixin gradient-font-2() {
+  // CSS
+  color: #4a21a3;
+  background-image: -webkit-linear-gradient(0deg, #4a21a3 0%, #ad2fa9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin button($width: 100%, $height: 40px) {
+	height: $height;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	font-family: inherit;
+	font-weight: 600;
+	color: $text-primary;
+	padding: 0 20px;
+	width: $width;
+	cursor: pointer;
+	@include gradient-90-deg();
+  @include flex($direction: row);
+  transition: 0.3s;
+
+	&:hover {
+		@include gradient-180-deg();
+	}
+}
+
+@mixin outlineButton {
+  @include button();
+  background: none;
+  color: $dull-black;
+  outline: 2px solid $dull-black;
+
+  &:hover {
+    color: $bg-secondary-2;
+    outline: 2px solid $bg-secondary-2;
+    background: none;
+  }
+}
+
+@mixin outlineButton2 {
+  @include button();
+  background: none;
+  color: $bg-secondary-2;
+  outline: 2px solid $bg-secondary-2;
+
+  &:hover {
+    color: $bg-secondary-2;
+    outline: 2px solid darken($color: $bg-secondary-2, $amount: 10%);
+    background: none;
+  }
+}
+
+@mixin input {
+  height: 40px;
+  background-color: $text-primary;
+  border-radius: 7px;
+  outline: 2px solid lighten($color: $bg-secondary-2, $amount: 20%);
+  border: none;
+  padding: 0 10px;
+  font-family: inherit;
+  transition: 0.3s;
+
+  &:focus {
+    outline: 2px solid $bg-secondary-2;
+  }
+}
+
+@mixin icon {
+	width: 35px;
+  height: 35px;
+  min-width: 35px;
+  min-height: 35px;
+  border-radius: 10px;
+  @include gradient-180-deg();
+  margin-right: 10px;
+  color: $text-primary;
+  font-size: 1.2rem;
+  @include flex($direction: column);
+}

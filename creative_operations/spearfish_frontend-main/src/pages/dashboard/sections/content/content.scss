@@ -1,0 +1,77 @@
+@use './content_media';
+@use '../../../../global/styles/global' as *;
+
+.dashboard-content {
+  position: relative;
+
+  .header-container {
+    width: 100%;
+    padding: 10px 20px;
+    .welcome {
+      p {
+        color: $text-secondary-dull;
+      }
+    }
+  
+    .search {
+      background-color: lighten($color: $bg-secondary-1, $amount: 35%);
+      padding: 5px;
+      border-radius: 20px;
+      width: 50%;
+      transition: 0.2s;
+      outline: 1px solid rgba($color: $bg-secondary-2, $alpha: 0.0);
+  
+  
+      input {
+        border: none;
+        outline: none;
+        background-color: inherit;
+        font-family: inherit;
+        width: 90%;
+        padding: 5px;
+        margin: 0 5px;
+        font-weight: bold;
+      }
+  
+      &:focus-within {
+        outline: 1px solid $bg-secondary-2;
+  
+        .icon {
+          color: darken($color: $bg-secondary-2, $amount: 20%);
+        }
+      }
+    }
+
+    .logout {
+      @include subtleGradient();
+      border-radius: 20px;
+      padding: 5px;
+      cursor: pointer;
+      outline: 1px solid rgb(0, 0, 0, 0);
+      transition: 0.3s;
+
+      .icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 1.4rem;
+        transition: 0.3s;
+        @include gradient-180-deg();
+        margin-right: 5px;
+        color: $text-primary;
+      }
+
+      .text {
+        transition: 0.3s;
+      }
+
+      &:hover {
+        outline: 1px solid $bg-secondary-2;
+
+        .text {
+          color: $bg-secondary-2;
+        }
+      }
+    }
+  }
+}

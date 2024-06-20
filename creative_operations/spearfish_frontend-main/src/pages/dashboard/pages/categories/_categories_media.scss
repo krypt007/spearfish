@@ -1,0 +1,11 @@
+@use '../../../../global/styles/include_media' as im;
+
+.categories-header {
+  @include im.media('<=560px') {
+    margin-top: 0px !important;
+    .search {
+      display: none;
+    }
+  }
+}
+

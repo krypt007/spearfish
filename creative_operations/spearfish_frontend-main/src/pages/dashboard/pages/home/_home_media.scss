@@ -1,0 +1,117 @@
+@use '../../../../global/styles/include_media' as im;
+@use '../../../../global/styles/global' as g;
+
+
+.dashboard-content {
+  .welcome-container {
+    @include im.media('<=960px') {
+      .message {
+        h1 {
+          font-size: 1.5rem !important;
+        }
+      }
+      .image {
+        width: 50%;
+        
+          img {
+            width: 250px;
+            transform: translateY(0) !important;
+          }
+      }
+    }
+
+    @include im.media('<=650px') {
+      height: auto !important;
+    }
+
+    @include im.media('<=560px') {
+      .image {
+        width: 40%;
+
+        img {
+          width: 200px;
+        }
+      }
+    }
+
+    @include im.media('<=460px') {
+      .message {
+        h1 {
+          margin-bottom: 10px;
+        }
+      }
+      .image {
+        display: none;
+      }
+    }
+  }
+
+  .services-overview {
+    @include im.media('<=tablet') {
+      @include g.flex($direction: column-reverse);
+
+      .milestones {
+        width: 100% !important;
+        min-height: auto !important;
+        margin-top: 30px;
+        @include g.flex();
+
+        .image {
+          transform: translate(0) !important;
+        }
+
+        .content {
+          margin: 0 !important;
+        }
+      }
+
+      .overviews-container {
+        width: 100% !important;
+
+        .overview-item { 
+          .upper {
+            .icon {
+              width: 40px !important;
+              height: 40px !important;
+            }
+
+            .linking-icon {
+              width: 30px !important;
+              height: 30px !important;
+            }
+
+            .details {
+              width: auto !important;
+
+              .fw-600 {
+                font-size: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @include im.media('<=440px') {
+      .milestones {
+        @include g.flex($direction: column);
+        min-height: auto !important;
+      }
+    }
+
+    @include im.media('<=350px') {
+      .overviews-container {
+        .overview-item { 
+          .upper {
+            @include g.flex($align-items: normal);
+            .linking-icon {
+              width: auto !important;
+              background-color: transparent !important;
+              color: g.$text-primary !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

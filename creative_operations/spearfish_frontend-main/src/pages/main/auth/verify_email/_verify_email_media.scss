@@ -1,0 +1,29 @@
+@use '../../../../global/styles/include_media' as im;
+
+.verify-main {
+  @include im.media('<=1030px') {
+    form {
+      width: 350px !important;
+    }
+  }
+
+  @include im.media('<=540px') {
+    form {
+      width: 300px !important;
+    }
+  }
+
+  @include im.media('<=400px') {
+    form {
+      width: 85% !important;
+    }
+  }
+}
+
+.nav-bar-top {
+  @include im.media('<=tablet') {
+    .landing-page-header {
+      padding: 0 20px !important;
+    }
+  }
+}

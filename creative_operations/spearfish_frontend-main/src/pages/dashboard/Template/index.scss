@@ -1,0 +1,21 @@
+@use './template_media';
+
+.dashboard-container {
+  width: 100%;
+  min-height: 100vh;
+
+  aside.right {
+    width: 20%;
+    min-height: 100vh;
+  }
+
+  aside.left {
+    width: 17%;
+    min-height: 100vh;
+  }
+
+  .dashboard-content {
+    width: 63%;
+    min-height: 100vh;
+  }
+}

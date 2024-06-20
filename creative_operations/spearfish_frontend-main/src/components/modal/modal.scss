@@ -1,0 +1,40 @@
+@use './modal_media';
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.39);
+    transition: 0.1s;
+  }
+
+  .modal-content {
+    position: relative;
+    transition: 0.2s;
+    z-index: 6;
+  }
+}
+
+.hide-container {
+  visibility: 0;
+  transition: 0.3s;
+  z-index: -1;
+
+  .overlay, .modal-content {
+    opacity: 0;
+  }
+
+  .modal-content {
+    transform: scale(0.8);
+  }
+}

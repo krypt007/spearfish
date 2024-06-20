@@ -1,0 +1,7 @@
+@use '../../global/styles/include_media' as im;
+
+.confirm-modal-container {
+  @include im.media('<=tablet') {
+    
+  }
+}
