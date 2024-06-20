@@ -1,0 +1,143 @@
+@use './category_media';
+@use '../../../../global/styles/global' as *;
+
+.category-overview {
+  margin: 20px 0 40px 0;
+
+  .cards {
+    width: 100%;
+    gap: 20px;
+    .card {
+      width: calc(100% / 3);
+      min-height: 100px;
+      border-radius: 10px;
+      padding: 10px 20px;
+      background: lighten($color: #9795EF, $amount: 20%);
+      border: 1px solid lighten($color: #9795EF, $amount: 15%);
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        border-radius: 12px;
+        border: 1px solid $text-primary;
+        color: $text-primary;
+        font-size: 1.5rem;
+        @include gradient(90deg, -0.67%, 99.93%, $color1: #F9C5D1, $color2: #9795EF);
+      }
+
+      .details {
+        color: $text-secondary;
+
+        .big-p {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+
+      }
+      .progress-bar {
+        width: 100%;
+        height: 7px;
+        // background-color: darken($color: #F39F86, $amount: 5%);
+        background-color: lighten($color: #db927e, $amount: 20%);
+        border-radius: 20px;
+        position: relative;
+        margin-top: 10px;
+
+        .progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          max-width: 100%;
+          min-width: 0;
+          height: 100%;
+          border-radius: inherit;
+          // background-color: #F39F86;
+          @include gradient(90deg, -0.67%, 99.93%, $color1: #F39F86, $color2: #facf4f);
+          transition: 0.3s;
+        }
+      } 
+    }
+
+    .gradient-3 {
+      background: lighten($color: #3EADCF, $amount: 40%);
+      border: 1px solid lighten($color: #3EADCF, $amount: 35%);
+
+      .icon {
+        @include gradient(90deg, -0.67%, 99.93%, $color1: #ABE9CD, $color2: #3EADCF);
+      }
+    }
+
+    .gradient-2 {
+      background: lighten($color: #F2CEA5, $amount: 15%);
+      border: 1px solid lighten($color: #F2CEA5, $amount: 10%);
+
+      .icon {
+        @include gradient(90deg, -0.67%, 99.93%, $color1: #F9D976, $color2: #F39F86);
+      }
+    }
+  }
+}
+
+.dial-action-btns {
+  .action-btns {
+    @include outlineButton();
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    outline: 1px solid $dull-black;
+
+    &:hover {
+      outline: 1px solid $bg-secondary-2;
+    }
+  }
+}
+
+// .desktop-rows {
+//   td {
+//     padding: 5px !important;
+//   }
+// }
+
+// .sub-dials-container {
+//   background-color: $text-primary;
+//   border-radius: 10px;
+//   border: 1px solid darken($color: $bg-primary, $amount: 5%);
+//   padding: 10px 20px;
+//   min-height: 400px;
+// }
+
+// new category
+.create-new-category {
+    @include gradient-180-deg();
+    border-radius: 10px;
+    padding: 0 40px;
+    .new-category-details {
+      color: $text-primary;
+      h1 {
+        font-size: 1.5rem;
+      }
+
+    button {
+      height: 35px;
+      border: none;
+      outline: 1px solid rgba($color: $text-primary, $alpha: 0.0);
+      border-radius: 30px;
+      background-color: $bg-primary;
+      font-family: inherit;
+      margin: 40px 0;
+      font-weight: bold;
+      padding: 0 20px;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: darken($bg-primary, 5%);
+        outline: 1px solid rgba($color: $text-primary, $alpha: 1.0);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@use '../../global/styles/include_media' as im;
+
+.modal-container {
+  overflow-y: scroll;
+  .modal-content {
+    @include im.media('<=tablet') {
+      position: absolute;
+      top: 30%;
+      width: 100%;
+      bottom: 0;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+}
+
+.hide-container {
+  @include im.media('<=tablet') {
+    .modal-content {
+      transform: translateY(20px) !important;
+    }
+  }
+}

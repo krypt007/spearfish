@@ -1,0 +1,29 @@
+@use '../../../../../../global/styles/include_media' as im;
+@use '../../../../../../global/styles/global' as g;
+
+.view-all-btn {
+  @include im.media('<=450px') {
+    @include g.flex($justify-content: center);
+    @include g.gradient-90-deg();
+    height: 40px;
+    border-radius: 10px;
+    color: g.$bg-primary;
+    font-size: 1rem;
+    margin-top: 40px !important;
+    padding: 0 10px
+  }
+}
+
+.categories-container {
+  @include im.media('<=670px') {
+    // @include g.flex($direction: column);
+    a {
+      width: 100%;
+    }
+
+    .category-card {
+      // width: 100%;
+      min-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use '../../../global/styles/include_media' as im;
+
+.main-page-nav {
+  @include im.media('<=tablet') {
+  .landing-page-header {
+      .hamburger-menu {
+        display: flex;
+      }
+
+      .links {
+        display: none;
+      }
+    }
+  }
+}

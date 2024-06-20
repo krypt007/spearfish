@@ -1,0 +1,35 @@
+@use '../../../../global/styles/include_media' as im;
+@use '../../../../global/styles/global' as g;
+
+.budgets-summary {
+  @include im.media('<=570px') {
+    @include g.flex($direction: column, $justify-content: flex-start, $align-items: normal);
+
+    .overview-items {
+      width: 100% !important;
+    }
+  }
+
+  @include im.media('<=400px') {
+    .overview-items {
+        @include g.flex($justify-content: space-between);
+      .p-small {
+        font-size: 0.7rem;
+      }
+
+      .p-large {
+        font-size: 1.3rem !important;
+      }
+    }
+
+    .icon {
+      margin-right: 5px !important;
+    }
+  }
+
+  @include im.media('<=370px') {
+    .overview-items {
+      margin-bottom: 20px;
+    }
+  }
+}

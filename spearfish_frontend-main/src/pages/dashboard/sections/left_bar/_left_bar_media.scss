@@ -1,0 +1,11 @@
+@use '../../../../global/styles/include_media' as im;
+
+aside.left {
+  .dashboard-nav {
+    @include im.media('<desktop') {
+      ul {
+        padding: 0 0 0 10px !important;
+      }
+    }
+  }
+}

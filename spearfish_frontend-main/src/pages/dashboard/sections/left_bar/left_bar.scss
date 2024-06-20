@@ -1,0 +1,52 @@
+@use './left_bar_media';
+@use '../../../../global/styles/global' as *;
+
+aside.left {
+  background-color: $text-primary;
+  .logo {
+    text-align: center;
+  }
+  .dashboard-nav {
+    margin-top: 100px;
+    ul {
+      list-style-type: none;
+      padding: 0 0 0 20px;
+      li {
+        display: block;
+        margin: 5px 0;
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+        transition: background-color 0.3s;
+        a {
+          display: block;
+          width: 100%;
+          padding: 5px 5px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 0.9rem;
+          color: $text-secondary;
+
+          .icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 1.3rem;
+            color: $text-primary;
+            background-color: $bg-secondary-1;
+          }
+        }
+
+        .active {
+          border-top-left-radius: 30px;
+          border-bottom-left-radius: 30px;
+          @include subtleGradient();
+        }
+
+        &:hover {
+          background: rgba($color: $bg-secondary-1, $alpha: 0.1);
+        }
+      }
+    }
+  }
+}

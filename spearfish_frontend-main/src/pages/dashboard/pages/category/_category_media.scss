@@ -1,0 +1,48 @@
+@use '../../../../global/styles/include_media' as im;
+@use '../../../../global/styles/global' as g;
+
+.category-overview {
+  // @include im.media('<=740px') {
+  //   @include g.flex($direction: column);
+
+  //   .balance, .category-summary {
+  //     width: 100% !important;
+  //   }
+
+  //   .balance {
+  //     margin-bottom: 20px;
+  //   }
+  // }
+
+  .cards {
+    @include im.media('<=1100px') {
+      .card {
+        .details {
+          p:nth-child(1) {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+
+    @include im.media('<640px') {
+      @include g.flex($direction: column);
+
+      .card {
+        width: 100% !important;
+        .details {
+          p:nth-child(1) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.create-new-category {
+  @include im.media('<=650px') {
+    @include g.flex($direction: column);
+    padding: 20px !important;
+  }
+}

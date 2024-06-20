@@ -1,0 +1,47 @@
+@use '../../../global/styles/include_media' as im;
+@use '../../../global/styles/global' as g;
+
+.landing-section {
+  .landing-container {
+    // Tablet media query
+    @include im.media('<=tablet') {
+      display: flex;
+      flex-direction: column;
+      .content, .image {
+        width: 100%;
+      }
+
+      .content {
+        padding: 0 20px;
+        h1 {
+          font-size: 3rem;
+        }
+      }
+
+      .image {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.flex-containers {
+  @include im.media('<=1120px') {
+    width: 100%;
+  }
+
+  @include im.media('<=tablet') {
+    @include g.flex($direction: column-reverse);
+    .content, .image {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@include im.media('<=tablet') {
+  .quote {
+    width: 100%;    
+  }
+}

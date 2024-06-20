@@ -1,0 +1,22 @@
+@import '../../global/styles/global';
+
+.horizontal-nav {
+  font-size: 1.1rem;
+  color: $dull-black;
+
+  .link {
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &:hover:not(.active) {
+      color: $bg-secondary-2;
+    }
+  }
+
+  .active {
+    font-weight: 600;
+    color: $text-secondary;
+  }
+}

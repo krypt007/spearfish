@@ -1,0 +1,86 @@
+@use '../../../../../global/styles/global' as *;
+@use './entry_row_media';
+
+.rows {
+  .row {
+    // background-color: $bg-secondary-1;
+    background-color: lighten($color: $bg-secondary-1, $amount: 35%);
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 0.9rem;
+    color: $text-secondary;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background-color: lighten($color: $bg-secondary-1, $amount: 33%);
+    }
+
+    .hide-on-open {
+      transition: 0.3s;
+      opacity: 0;
+      margin-bottom: -20px;
+      visibility: hidden;
+    }
+
+    .upper {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .opened-indicator {
+        transition: 0.3s;
+      }
+
+      .large-width {
+        min-width: 200px;
+      }
+    }
+
+    .lower {
+      margin: 5px 10px;
+      height: 0;
+      min-height: 40px;
+      overflow: hidden;
+      transition: 0.3s;
+
+      .buttons {
+        .icon {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          outline: 1px solid $dull-black;
+          color: $dull-black-2;
+          @include subtleGradient();
+
+          &:hover {
+            @include gradient-180-deg();
+            color: $text-primary;
+          }
+        }
+      }
+    }
+  }
+  
+  .closed {
+    .hide-on-open {
+      opacity: 1;
+      margin-bottom: 0;
+      visibility: visible;
+    }
+
+    .upper {
+      .opened-indicator {
+        transform: rotate(90deg);
+      }
+    }
+
+    .lower {
+      opacity: 0;
+      min-height: 0;
+      margin: 0 10px;
+      visibility: hidden;
+    }
+  }
+}

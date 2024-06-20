@@ -1,0 +1,142 @@
+@use '../../../global/styles/global' as *;
+
+.landing-section {
+  height: 90vh;
+
+  .landing-container {
+    .content {
+      width: 40%;
+      margin-right: 30px;
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      p {
+        margin: 20px 0;
+      }
+
+      button {
+        height: 40px;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        padding: 0 20px;
+        border-radius: 20px;
+        color: $text-primary;
+        font-weight: bold;
+        font-size: 1rem;
+        @include gradient-90-deg();
+
+        &:hover {
+          @include animate-gradient();
+        }
+      }
+    }
+
+    .image {
+      .image-container {
+        height: 400px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+.flex-containers {
+  width: 85%;
+  margin: 80px auto;
+  .image, .content {
+    width: 50%;
+  }
+
+  .content {
+    padding-left: 20px;
+    margin: 50px 0;
+    p {
+      width: 90%;
+    }
+    .title {
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
+      color: $dull-black-2;
+    }
+  }
+
+  .content-cover {
+    width: 100%;
+    margin: 40px 0;
+  }
+
+  .image {
+    max-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+#about {
+  border-radius: 20px;
+  margin-top: -70px;
+
+  .content {
+    padding: 20px;
+
+    h1 {
+      @include gradient-font();
+    }
+
+    p {
+      width: 100%;
+    }
+  }
+}
+
+.quote {
+  width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+
+footer {
+  background-color: $text-primary;
+  padding: 40px 20px;
+  margin-top: 100px;
+
+  .social-icons {
+    .social-icon {
+      font-size: 2.5rem;
+      color: $bg-secondary-1;
+      &:hover {
+        @include gradient-font();
+      }
+    }
+  }
+
+  .image {
+    width: 100px;
+    height: 100px;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+// import media queries
+
+@import './media';

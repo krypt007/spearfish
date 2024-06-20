@@ -1,0 +1,7 @@
+@use '../../../../global/styles/include_media' as im;
+
+.header-container {
+  @include im.media('<=tablet') {
+    display: none;
+  }
+}

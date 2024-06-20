@@ -1,0 +1,39 @@
+@use '../../../../../global/styles/include_media' as im;
+@use '../../../../../global/styles/include_media' as g;
+
+.budget-div {
+  @include im.media('<=920px') {
+    width: 70% !important;
+
+    .buttons {
+      width: 70% !important;
+    }
+  }
+
+  @include im.media('<=510px') {
+    width: 100% !important;
+    padding: 0 !important;
+
+    form {
+      margin-bottom: 80px !important;
+    }
+
+    .buttons {
+      width: 100% !important;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+    }
+  }
+
+  @include im.media('<=420px') {
+    .categories-amount {
+      .input-container {
+        width: 50% !important;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

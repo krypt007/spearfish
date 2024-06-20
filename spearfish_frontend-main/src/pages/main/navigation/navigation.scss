@@ -1,0 +1,134 @@
+@use './media';
+@use '../../../global/styles/global' as *;
+
+nav.main-page-nav {
+  position: sticky;
+  top: 0;
+  // padding: 10px 0;
+  z-index: 4;
+  .landing-page-header {
+    height: 70px;
+
+    .hamburger-menu {
+      position: relative;
+      z-index: 5;
+      width: 40px;
+      height: 40px;
+      background-color: darken($color: $bg-primary, $amount: 5%);
+      border-radius: 10px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+
+      .icons {
+        position: absolute;
+      }
+
+      &:hover {
+        transform: translateX(2px);
+      }
+    }
+
+    .hamburger-links {
+      position: fixed;
+      left: 0;
+      top: 0;
+      background-color: $bg-primary;
+      height: 100vh;
+      width: 100%;
+      z-index: 4;
+      transition: 0.3s;
+
+      ul {
+        list-style: none;
+
+        li {
+          font-size: 2rem;
+          // background-color: green;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          transition: 0.3s;
+          cursor: pointer;
+
+          &:hover {
+            color: $bg-secondary-1;
+            transform: translateX(2px);
+            &::before {
+              content: '';
+              position: absolute;
+              left: -65px;
+              width: 40px;
+              height: 40px;
+              background-color: lighten($color: $bg-secondary-1, $amount: 30%);
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    .hamburger-links-hidden {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    .links {
+      width: 50%;
+      ul {
+        list-style-type: none;
+        li {
+          display: inline-block;
+          margin: 0 10px;
+          font-weight: 600;
+          border-radius: 5px;
+          transition: 0.3s ease-in-out;
+          position: relative;
+
+          a {
+            text-decoration: none;
+            color: $text-secondary;
+            display: inline-block;
+            padding: 5px 20px;
+
+            button {
+              height: 35px;
+              padding: 5px 20px;
+              @include gradient-90-deg();
+              border-radius: 20px;
+              font-family: inherit;
+              color: $text-primary;
+              font-weight: 600;
+              border: none;
+              outline: none;
+              cursor: pointer;
+            }
+
+          }
+
+          &:not(:has(button)):before {
+            content: '';
+            position: absolute;
+            width: 40px;
+            max-width: 0px;
+            left: 20px;
+            bottom: -5px;
+            display: inline-block;
+            height: 4px;
+            @include gradient-90-deg();
+            border-radius: 10px;
+            transition: max-width 0.2s ease-in-out;
+          }
+
+          &:hover {
+            &::before {
+              max-width: 40px;
+            }
+            a {
+              color: $bg-secondary-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

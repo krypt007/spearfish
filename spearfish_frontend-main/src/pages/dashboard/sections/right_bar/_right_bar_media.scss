@@ -1,0 +1,16 @@
+@use '../../../../global/styles/include_media' as im;
+
+aside.right {
+  .user-container {
+    @include im.media('<1090px') {
+      .user-details {
+        h1 {
+          font-size: 0.9rem;
+        }
+      }
+      .thumbnail {
+        margin-right: 5px !important;
+      }
+    }
+  }
+}

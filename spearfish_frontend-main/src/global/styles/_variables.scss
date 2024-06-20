@@ -1,0 +1,14 @@
+@use '../../global/styles/global' as g;
+
+$theme-colors: (
+  bgPrimary: g.$bg-primary,
+  bgSecondary1Lighter: lighten(g.$bg-secondary-1, 37%),
+  bgSecondary1: g.$bg-secondary-1,
+  bgSecondary2: g.$bg-secondary-2,
+);
+
+:export{
+  @each $key, $value in $theme-colors {
+    #{unquote($key)}: $value;
+  }
+}

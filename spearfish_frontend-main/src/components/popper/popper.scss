@@ -1,0 +1,23 @@
+.popper {
+  padding: 2px 15px;
+  border-radius: 30px;
+  background: rgb(44, 44, 44);
+  color: white;
+  text-transform: capitalize;
+  font-size: 0.7rem;
+  transform: translateY(10px);
+  z-index: 4;
+    
+  &::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    z-index: 4;
+    background-color: rgb(44, 44, 44);
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    transform: rotate(45deg) translateX(-50%);
+  }
+}

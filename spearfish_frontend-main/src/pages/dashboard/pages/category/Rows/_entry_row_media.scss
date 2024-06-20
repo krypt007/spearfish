@@ -1,0 +1,25 @@
+@use '../../../../../global/styles/include_media' as im;
+
+.rows {
+  .row {
+    @include im.media('<=630px') {
+      .hide-on-mobile {
+        display: none;
+      }
+    }
+
+    @include im.media('<=355px') {
+      .upper {
+        .large-width {
+          min-width: 150px !important;
+        }
+
+        .hide-on-open {
+          opacity: 0;
+          margin-bottom: -20px;
+          visibility: hidden;
+        }
+      }
+    }
+  }
+}

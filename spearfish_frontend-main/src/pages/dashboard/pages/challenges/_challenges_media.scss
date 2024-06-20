@@ -1,0 +1,124 @@
+@use '../../../../global/styles/include_media' as im;
+@use '../../../../global/styles/global' as g;
+
+.challenge-overview-cont {
+  @include im.media('>tablet', '<=1150px') {
+    @include g.flex($direction: column, $align-items: normal);
+
+    .challenge-intro, .challenge-overview {
+      width: 100%;
+
+      .image {
+        height: 300px;
+        float: right;
+      }
+    }
+
+    .challenge-intro {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include im.media('<=tablet') {
+    .challenge-overview {
+      .large-content-card {
+        .details-container {
+          width: calc(100% - 130px);
+        }
+      }
+    }
+  }
+
+  @include im.media('<=745px') {
+    @include g.flex($direction: column, $align-items: normal);
+
+    .challenge-intro, .challenge-overview {
+      width: 100%;
+
+      .image {
+        height: 300px;
+        float: right;
+      }
+    }
+
+    .challenge-intro {
+      margin-bottom: 20px;
+    }
+  }
+
+  @include im.media('<=750px') {
+    .challenge-overview {
+      .lower {
+        .big-p {
+          font-size: 1.5rem !important;
+        }
+      }
+    }
+  }
+
+  @include im.media('<=410px') {
+    .challenge-overview {
+      .lower {
+        @include g.flex($direction: column, $align-items: normal);
+
+        .small-content-card {
+          width: 100%;
+          height: 180px;
+          margin-bottom: 20px;
+        }
+
+        .progress-bar-container {
+          width: 100%;
+        }
+      }
+    }
+
+    .large-content-card {
+      @include g.flex($direction: column, $align-items: normal);
+      height: auto !important;
+
+      .details-container {
+        width: 100% !important;
+      }
+
+      .btn-container {
+        margin-top: 20px;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+.challenges-list {
+  @include im.media('<=410px') {
+    .challenge-container {
+      .challenge-icon {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        min-height: 60px !important;
+      }
+    }
+
+    .upvote-icon {
+      display: none;
+    }
+  }
+
+  @include im.media('<=330px') {
+    .challenge-container {
+      .fs-1-1 {
+        font-size: 1rem;
+      }
+      .challenge-icon {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        min-height: 50px !important;
+      }
+    }
+  }
+}
